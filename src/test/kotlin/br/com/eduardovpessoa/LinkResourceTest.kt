@@ -25,43 +25,43 @@ class LinkResourceTest {
     @Test
     fun `check url error giving an empty url`() {
         given()
-                .body(emptyDTO)
-                .contentType(ContentType.JSON)
-                .`when`().post("/url/check")
-                .then()
-                .statusCode(400)
+            .body(emptyDTO)
+            .contentType(ContentType.JSON)
+            .`when`().post("/url/check")
+            .then()
+            .statusCode(400)
     }
 
     @Test
     fun `register a new and a duplicated link`() {
         given()
-                .body(dto)
-                .contentType(ContentType.JSON)
-                .`when`().post("/url/new")
-                .then()
-                .statusCode(201)
+            .body(dto)
+            .contentType(ContentType.JSON)
+            .`when`().post("/url/new")
+            .then()
+            .statusCode(201)
         given()
-                .body(dto)
-                .contentType(ContentType.JSON)
-                .`when`().post("/url/new")
-                .then()
-                .statusCode(200)
+            .body(dto)
+            .contentType(ContentType.JSON)
+            .`when`().post("/url/new")
+            .then()
+            .statusCode(200)
     }
 
     @Test
     fun `list all links`() {
         given()
-                .`when`().get("/url")
-                .then()
-                .statusCode(200)
+            .`when`().get("/url")
+            .then()
+            .statusCode(200)
     }
 
     @Test
     fun `delete all links`() {
         given()
-                .`when`().delete("/url/remove")
-                .then()
-                .statusCode(200)
+            .`when`().delete("/url/remove")
+            .then()
+            .statusCode(200)
     }
 
 }
