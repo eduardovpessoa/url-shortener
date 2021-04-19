@@ -48,7 +48,6 @@ class LinkResource {
         }
     }
 
-
     @Transactional
     @POST
     @Path("/new")
